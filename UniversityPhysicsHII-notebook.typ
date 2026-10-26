@@ -168,6 +168,10 @@ $ arrow(E) = arrow(E)_0 + arrow(E)^' $
 = 稳恒磁场
 
 == 重要结论
+#proposition[有限长直电流的磁场][
+  $ B = (mu_0 I) / (4 pi d) (cos theta_1 - cos theta_2) $
+]
+
 #proposition[无限长直电流的磁场][
   $ B = (mu_0 I) / (2 pi d) $
 ]
@@ -189,6 +193,10 @@ $ arrow(E) = arrow(E)_0 + arrow(E)^' $
 ]
 #proposition[无限大平面电流的磁场][
   $ B = (mu_0 alpha) / 2 $
+]
+#proposition[两无限长平行直电流间的相互作用][
+  $ d F_1 = (mu_0 I_1 I_2 d l_1) / (2 pi d) $
+  $ d F_2 = (mu_0 I_1 I_2 d l_2) / (2 pi d) $
 ]
 == 毕奥-萨伐尔定律
 #theorem[毕奥-萨伐尔定律][
