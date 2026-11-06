@@ -15,6 +15,12 @@
 #proposition[无限大均匀带电平面的电场][
   $ E = sigma / (2 epsilon_0) $
 ]
+#proposition[无限长均匀带电线的电场][
+  $ E = lambda / (2 pi epsilon_0 r) $
+]
+#proposition[均匀带电球面的电场][
+  内部$E = 0$，外部相当于所有电荷集中在球心
+]
 
 #proposition[电偶极子][
   #definition[电偶极矩][$ arrow(p) = q arrow(l) $]
@@ -108,7 +114,7 @@
   $ W_e = 1 / 2 U_C Q = 1/ 2 C U_C^2 = Q^2 / (2 C) $
 ]
 #proposition[静电场的能量与能量密度][
-  $ w_e = 1/2 D E = 1/2 epsilon E^2 $
+  $ w_e = 1/2 arrow(E) dot arrow(D) = 1/2 epsilon E^2 $
   $ W_e = integral.triple_V w_e d V $
 ]
 
@@ -175,6 +181,11 @@ $ arrow(E) = arrow(E)_0 + arrow(E)^' $
 #proposition[无限长直电流的磁场][
   $ B = (mu_0 I) / (2 pi d) $
 ]
+
+#proposition[均匀柱面电流的磁场][
+  内部$B = 0$，外部相当于所有电流集中在轴心
+]
+
 #proposition[圆电流轴线上的磁场][
   $ B = (mu_0 I R^2) / (2 (R^2 + z^2)^(3/2)) $
   $z>>R$
@@ -252,7 +263,7 @@ $ arrow(E) = arrow(E)_0 + arrow(E)^' $
 ]
 
 #theorem[安培力的功][稳恒磁场，稳恒电流
-  $ A = I (Phi_f - Phi_i) $
+  $ A = I (Phi_2 - Phi_1) $
 ]
 == 带电粒子的运动
 #theorem[洛伦兹力][
@@ -325,4 +336,132 @@ $ arrow(B) = arrow(B)_0 + arrow(B)^' $
     $ H_(1 t) = H_(2 t), B_(1 t)/mu_1 = B_(2 t)/mu_2 $
 
   $ mu_2 tan theta_1 = mu_1 tan theta_2 $
+]
+= 电磁感应
+== 法拉第电磁感应定律
+#theorem[法拉第电磁感应定律][
+  $ cal(E) = - (d Phi_m) / (d t) $
+]
+
+#proposition[通过电荷量][
+  $ q = 1/R abs(Phi_2 - Phi_1) $
+]
+== 动生电动势
+#theorem[动生电动势][
+  $ cal(E) = integral_a^b (arrow(v) times arrow(B)) dot d arrow(l) $
+]
+== 感生电动势
+#theorem[感应电场][
+  $ integral.cont_l arrow(E)_i dot d arrow(l) = - integral.double_S (partial arrow(B)) / (partial t) dot d arrow(S) $
+  $ nabla times arrow(E)_i = - (partial arrow(B)) / (partial t) $
+]
+
+#theorem[感生电动势][
+  $ cal(E) = integral_a^b arrow(E)_i dot d arrow(l) $
+]
+== 自感和互感
+#proposition[自感][
+  $ Psi = L I $
+  $ U = L (d I)/(d t) $
+]
+
+#proposition[串联][
+  $ L = L_1 + L_2 + L_3 $
+]
+
+#proposition[并联][
+  $ 1/L = 1/L_1 + 1/L_2 + 1/L_3 $
+]
+
+#proposition[互感][
+  $ Psi_21 = M_21 I_1 $
+  $ Psi_12 = M_12 I_2 $
+  $ U_1 = L_1 (d I_1) / (d t) + M (d I_2) / (d t) $
+  $ U_2 = M (d I_1) / (d t) + L_2 (d I_2) / (d t) $
+]
+#definition[耦合系数][
+  $ k = M / (sqrt(L_1 L_2)) $
+]
+
+#proposition[顺接串联][
+  $ L = L_1 + L_2 + 2 M $
+]
+#proposition[反接串联][
+  $ L = L_1 + L_2 - 2 M $
+]
+
+== 磁场能量
+#proposition[自感的能量][
+  $ W_m = 1/2 I Psi = 1/2 L I^2 = Psi^2 / (2 L) $
+]
+
+#proposition[互感能量][
+  $ W_m = 1/2 L_1 I_1^2 + 1/2 L_2 I_2^2 + M I_1 I_2 $
+]
+
+#proposition[磁场的能量与能量密度][
+  $ w_m = 1/2 arrow(B) dot arrow(H) $
+  $ W_m = integral.triple_V w_m d V $
+]
+== 麦克斯韦方程组
+#definition[位移电流与位移电流密度][
+  $ I_d = integral.double_S (partial arrow(D)) / (partial t) dot d arrow(S) $
+  $ arrow(J)_d = (partial arrow(D)) / (partial t) $
+]
+
+#theorem[全电流定律][
+  $ I_t = I_c + I_d + I_m $
+  $ integral.surf_S arrow(J)_t dot d arrow(S) = 0 $
+]
+
+#theorem[麦克斯韦方程组][积分形式][
+  $ integral.surf_S arrow(D) dot d arrow(S) = integral.triple_V rho d V $
+  $ integral.cont_l arrow(E) dot d arrow(l) = - integral.double_S (partial arrow(B))/(partial t) dot d arrow(S) $
+  $ integral.surf_S arrow(B) dot d arrow(S) = 0 $
+  $
+    integral.cont_l arrow(H) dot d arrow(l) = integral.double_S arrow(J) dot d arrow(S) + integral.double_S (partial arrow(D)) / (partial t) dot d arrow(S)
+  $
+]
+
+#theorem[麦克斯韦方程组][微分形式][
+  $ nabla dot arrow(D) = rho $
+  $ nabla times arrow(E) = - (partial arrow(B)) / (partial t) $
+  $ nabla dot arrow(B) = 0 $
+  $ nabla times arrow(H) = arrow(J) + (partial arrow(D)) / (partial t) $
+]
+
+#theorem[][
+  各向同性线性介质
+  $ arrow(D) = epsilon arrow(E) $
+  $ arrow(B) = mu arrow(H) $
+  $ arrow(J) = sigma arrow(E) $
+]
+
+== 电磁波的辐射和传播
+#theorem[波动方程][
+  $ (partial^2 arrow(E)) / (partial t^2) = v^2 nabla^2 arrow(E) $
+  $ (partial^2 arrow(H)) / (partial t^2) = v^2 nabla^2 arrow(H) $
+  $ v = 1/ sqrt(epsilon mu) $
+]
+#theorem[电磁波][
+  $ arrow(E) = arrow(E)_0 cos(omega t - arrow(k) dot arrow(r)) $
+  $ arrow(H) = arrow(H)_0 cos(omega t - arrow(k) dot arrow(r)) $
+]
+#proposition[电磁波的性质][
+  + $arrow(E), arrow(B), arrow(k)$两两垂直，$arrow(k) parallel arrow(E) times arrow(B)$
+  + $arrow(E), arrow(B)$同相位
+  + $abs(arrow(E)) / abs(arrow(B)) = v, sqrt(epsilon) abs(arrow(E)) = sqrt(mu) abs(arrow(H))$
+]
+
+#proposition[能量密度][
+  $ w = 1/2 (arrow(E) dot arrow(D) + arrow(B) dot arrow(H)) = 1/2(epsilon E^2 + mu H^2) $
+]
+
+#proposition[能流密度 坡因廷矢量][
+  $ S = w v $
+  $ arrow(S) = arrow(E) times arrow(H) $
+]
+
+#proposition[强度][
+  $ I = overline(S) = 1/2 sqrt(epsilon / mu) E_0^2 $
 ]
